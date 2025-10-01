@@ -58,7 +58,7 @@ async def start(bot, m: Message):
             f"➠ Can Extract Videos & PDFs From Your Text File and Upload to Telegram!\n\n"
             f"**You are currently using the free version.** 🆓\n"
             f"**Want to get started? Press /id**\n\n"
-            f"💬 **Contact:** [{CREDIT}](tg://openmessage?user_id={OWNER}) to Get The Subscription ! 🔓\n"
+            f"💬 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 : [{CREDIT}](tg://openmessage?user_id={OWNER}) to Get The Subscription ! 🔓\n"
         )
     await bot.send_photo(
         chat_id=m.chat.id,
@@ -74,7 +74,7 @@ async def back_to_main_menu(client, callback_query):
     first_name = callback_query.from_user.first_name
     caption = (
         f"𝐇𝐞𝐥𝐥𝐨 **{first_name}** 👋!\n\n"
-        f"➠ 𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭\n"
+        f"➠ 𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭\n\n"
         f"➠ Can Extract Videos & PDFs From Your Text File and Upload to Telegram!\n\n"
         f"╭────────⊰◆⊱────────╮\n"
         f"➠ 𝐌𝐚𝐝𝐞 𝐁𝐲 : [{CREDIT}](tg://openmessage?user_id={OWNER}) 💻\n"

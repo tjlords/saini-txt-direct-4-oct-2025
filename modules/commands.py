@@ -19,7 +19,6 @@ def register_commands_handlers(bot):
     async def cmd(client, callback_query):
         user_id = callback_query.from_user.id
         first_name = callback_query.from_user.first_name
-        caption = f"✨ **Welcome [{first_name}](tg://user?id={user_id})\nChoose Button to select Commands**"
         caption = (
             f"🌟  **Welcome** [{first_name}](tg://user?id={user_id})! 🌟\n"
             f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
@@ -29,7 +28,7 @@ def register_commands_handlers(bot):
             f"🚀 Let’s start powerful features!"
         )
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🕵 User", callback_data="user_command"), InlineKeyboardButton("👑 Owner", callback_data="owner_command")],
+            [InlineKeyboardButton("🕵 Users", callback_data="user_command"), InlineKeyboardButton("👑 Owner", callback_data="owner_command")],
             [InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]
         ])
         await callback_query.message.edit_media(

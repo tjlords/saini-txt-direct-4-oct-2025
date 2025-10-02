@@ -20,8 +20,17 @@ def register_commands_handlers(bot):
         user_id = callback_query.from_user.id
         first_name = callback_query.from_user.first_name
         caption = f"✨ **Welcome [{first_name}](tg://user?id={user_id})\nChoose Button to select Commands**"
+        caption = (
+            f"🌟  **Welcome** [{first_name}](tg://user?id={user_id})! 🌟\n"
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
+            f"**🔘 Tap a button below for Commands**\n"
+            f"<blockquote><b>Button 🕵 Users</b> - For Users\n"
+            f"<b>Button 👑 Owner</b> - For Owner</blockquote>\n"
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
+            f"🚀 Let’s get started with powerful features!"
+        )
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🚻 User", callback_data="user_command"), InlineKeyboardButton("🚹 Owner", callback_data="owner_command")],
+            [InlineKeyboardButton("🕵 User", callback_data="user_command"), InlineKeyboardButton("👑 Owner", callback_data="owner_command")],
             [InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]
         ])
         await callback_query.message.edit_media(
@@ -39,25 +48,26 @@ def register_commands_handlers(bot):
       keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Commands", callback_data="cmd_command")]])
       caption = (
             f"💥 𝐁𝐎𝐓𝐒 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒\n"
-            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n" 
-            f"📌 𝗠𝗮𝗶𝗻 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:\n\n"  
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n" 
+            f"📌 𝗠𝗮𝗶𝗻 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:\n"  
             f"➥ /start – Bot Status Check\n"
             f"➥ /y2t – YouTube → .txt Converter\n"  
             f"➥ /ytm – YouTube → .mp3 downloader\n"  
             f"➥ /t2t – Text → .txt Generator\n"
             f"➥ /t2h – .txt → .html Converter\n" 
             f"➥ /stop – Cancel Running Task\n"
-            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ \n" 
-            f"⚙️ 𝗧𝗼𝗼𝗹𝘀 & 𝗦𝗲𝘁𝘁𝗶𝗻𝗴𝘀: \n\n" 
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ \n\n" 
+            f"⚙️ 𝗧𝗼𝗼𝗹𝘀 & 𝗦𝗲𝘁𝘁𝗶𝗻𝗴𝘀:\n" 
             f"➥ /cookies – Update YT Cookies\n" 
             f"➥ /id – Get Chat/User ID\n"  
             f"➥ /info – User Details\n"  
             f"➥ /logs – View Bot Activity\n"
-            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-            f"💡 𝗡𝗼𝘁𝗲:\n\n"  
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n"
+            f"💡 𝗡𝗼𝘁𝗲:\n"  
             f"• Send any link for auto-extraction\n"
             f"• Send direct .txt file for auto-extraction\n"
-            f"• Supports batch processing\n\n"  
+            f"• Supports batch processing\n"
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n"
             f"╭────────⊰◆⊱────────╮\n"   
             f" ➠ 𝐌𝐚𝐝𝐞 𝐁𝐲 : {CREDIT} 💻\n"
             f"╰────────⊰◆⊱────────╯\n"

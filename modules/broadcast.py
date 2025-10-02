@@ -4,6 +4,7 @@ import subprocess
 from vars import OWNER, CREDIT, AUTH_USERS, TOTAL_USERS
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from pyrogram.errors import FloodWait
 
 def register_broadcast_handlers(bot):
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,

@@ -22,12 +22,11 @@ def register_commands_handlers(bot):
         caption = f"✨ **Welcome [{first_name}](tg://user?id={user_id})\nChoose Button to select Commands**"
         caption = (
             f"🌟  **Welcome** [{first_name}](tg://user?id={user_id})! 🌟\n"
-            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-            f"**🔘 Tap a button below for Commands**\n"
-            f"<blockquote><b>Button 🕵 Users</b> - For Users\n"
-            f"<b>Button 👑 Owner</b> - For Owner</blockquote>\n"
-            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-            f"🚀 Let’s get started with powerful features!"
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
+            f"**🔘 Tap a button for Commands**\n"
+            f"<blockquote><b>🕵 Users | 👑 Owner</b></blockquote>\n"
+            f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
+            f"🚀 Let’s start powerful features!"
         )
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("🕵 User", callback_data="user_command"), InlineKeyboardButton("👑 Owner", callback_data="owner_command")],

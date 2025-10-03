@@ -119,7 +119,7 @@ def register_settings_handlers(bot):
             "**Video Title :** `{name1} [{res}p].{ext}`\n"
             "<blockquote><b>Batch Name :</b> {b_name}</blockquote>\n\n"
             "**Extracted by➤**{CR}\n"
-            "✪━━━━━━━━━━━━━━━━✪\n\n"
+            "✪━━━━━━━━━━━━━━━━✪\n\n\n\n"
             "**Caption Style 2**\n"
             "✪━━━━━━━★━━━━━━━✪\n"
             "**——— ✦ {str(count).zfill(3)} ✦ ———**\n\n"
@@ -128,12 +128,12 @@ def register_settings_handlers(bot):
             "**├── Resolution : [{res}]**\n"
             "<blockquote>📚 **Course : {b_name}**</blockquote>\n\n"
             "🌟 **Extracted By : {credit}**\n"
-            f"✪━━━━━━━━━━━━━━━━✪\n\n"
+            f"✪━━━━━━━━━━━━━━━━✪\n\n\n\n"
             "**Caption Style 3**\n"
             f"✪━━━━━━━★━━━━━━━✪\n"
             "<blockquote expandable>**{str(count).zfill(3)}.** {name1} [{res}p].{ext}</blockquote>\n"
-            f"✪━━━━━━━━━━━━━━━━✪\n\n"
-            "**Send Your Caption Style eg. /cc1 or /cc2 or /cc3**", reply_markup=keyboard)
+            f"✪━━━━━━━━━━━━━━━━✪\n\n\n\n"
+            "**Send Your Caption Style /cc1 | /cc2 | /cc3**", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
             if input_msg.text.lower() == "/cc1":
@@ -160,7 +160,7 @@ def register_settings_handlers(bot):
             f"✏️ <u><b>End Filename Settings</b></u>\n"
             f"✪━━━━━━━━★━━━━━━━━✪\n"
             f"🖊️ <b>Send Ending file name\n"
-            f"❌ Send /d for skip</b>\n"
+            f"✔️ Send /d for skip</b>\n"
             f"✪━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
@@ -184,7 +184,7 @@ def register_settings_handlers(bot):
             f"🖼️ <u><b>Thumbnail Settings</b></u>\n"
             f"✪━━━━━━━★━━━━━━━✪\n"
             f"🔗 <b>Send Thumbnail URL\n"
-            f"❌ Send /d for default</b>\n"
+            f"✔️ Send /d for default</b>\n"
             f"✪━━━━━━━━━━━━━━━━✪\n"
             f"<blockquote><b>💵 Note - For document format send : /no</b></blockquote>", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
@@ -224,7 +224,7 @@ def register_settings_handlers(bot):
             f"✍️ <u><b>Credit Settings</b></u>\n"
             f"✪━━━━━━━★━━━━━━━✪\n"
             f"📝 <b>Send your Credit\n"
-            f"❌ Send /d for default</b>\n"
+            f"✔️ Send /d for default</b>\n"
             f"✪━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
@@ -286,7 +286,7 @@ def register_settings_handlers(bot):
             f"👑 <b>brightcove link Token</b> 👑\n"
             f"✪━━━━━━━━★━━━━━━━━✪\n"
             f"🔐 <b>Send brightcove link Token\n"
-            f"❌ Send /d for Default</b>\n"
+            f"✔️ Send /d for Default</b>\n"
             f"✪━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
@@ -310,7 +310,7 @@ def register_settings_handlers(bot):
             f"🎥 <u><b>Video Watermark Settings</b></u> 🎥\n"
             f"✪━━━━━━━━━★━━━━━━━━━✪\n"
             f"💦 <b>Send your Watermark Text\n"
-            f"❌ Send /d to Skip</b>\n"
+            f"✔️ Send /d to Skip</b>\n"
             f"✪━━━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
@@ -346,7 +346,7 @@ def register_settings_handlers(bot):
             f"🎥 <b>Enter Video Quality</b>\n"
             f"━━━━━━━━━━━⚡━━━━━━━━━━━\n"
             f"🎮 `144` | `240` | `360` | `480` | `720` | `1080`\n"
-            f"❌ Send /d for default\n"
+            f"✔️ Send /d for default\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
@@ -398,7 +398,7 @@ def register_settings_handlers(bot):
             f"━━━━━━━━━━ ✦ ━━━━━━━━━━\n"
             f"✨ <b>Topic in Caption Settings</b> ✨\n"
             f"━━━━━━━━━━ ✦ ━━━━━━━━━━\n"
-            f"✅ <u><b>Send</b></u> → /yes | ❌ Send</b></u> → /d\n"
+            f"✅ <u><b>Send</b></u> → /yes | ❌ Send</b></u> → /no\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"📌 <i>Topic will be auto-fetched from (bracket) in title</i>\n", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)

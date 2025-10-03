@@ -114,19 +114,25 @@ def register_settings_handlers(bot):
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]])
         editable = await callback_query.message.edit(
             "**Caption Style 1**\n"
-            "<blockquote expandable><b>[🎥]Vid Id</b> : {str(count).zfill(3)}\n"
+            "✪━━━━━━━★━━━━━━━✪\n"
+            "<b>[🎥]Vid Id</b> : {str(count).zfill(3)}\n"
             "**Video Title :** `{name1} [{res}p].{ext}`\n"
             "<blockquote><b>Batch Name :</b> {b_name}</blockquote>\n\n"
-            "**Extracted by➤**{CR}</blockquote>\n\n"
+            "**Extracted by➤**{CR}\n"
+            "✪━━━━━━━━━━━━━━━━✪\n\n"
             "**Caption Style 2**\n"
-            "<blockquote expandable>**——— ✦ {str(count).zfill(3)} ✦ ———**\n\n"
+            "✪━━━━━━━★━━━━━━━✪\n"
+            "**——— ✦ {str(count).zfill(3)} ✦ ———**\n\n"
             "🎞️ **Title** : `{name1}`\n"
             "**├── Extention :  {extension}.{ext}**\n"
             "**├── Resolution : [{res}]**\n"
-            "📚 **Course : {b_name}**\n\n"
-            "🌟 **Extracted By : {credit}**</blockquote>\n\n"
+            "<blockquote>📚 **Course : {b_name}**</blockquote>\n\n"
+            "🌟 **Extracted By : {credit}**\n"
+            f"✪━━━━━━━━━━━━━━━━✪\n\n"
             "**Caption Style 3**\n"
-            "<blockquote expandable>**{str(count).zfill(3)}.** {name1} [{res}p].{ext}</blockquote>\n\n"
+            f"✪━━━━━━━★━━━━━━━✪\n"
+            "<blockquote expandable>**{str(count).zfill(3)}.** {name1} [{res}p].{ext}</blockquote>\n"
+            f"✪━━━━━━━━━━━━━━━━✪\n\n"
             "**Send Your Caption Style eg. /cc1 or /cc2 or /cc3**", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
@@ -392,8 +398,7 @@ def register_settings_handlers(bot):
             f"━━━━━━━━━━ ✦ ━━━━━━━━━━\n"
             f"✨ <b>Topic in Caption Settings</b> ✨\n"
             f"━━━━━━━━━━ ✦ ━━━━━━━━━━\n"
-            f"✅ <u><b>Enable Topic</b></u> → /yes\n"
-            f"❌ <u><b>Disable Topic</b></u> → /d\n"
+            f"✅ <u><b>Send</b></u> → /yes | ❌ Send</b></u> → /d\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"📌 <i>Topic will be auto-fetched from (bracket) in title</i>\n", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)

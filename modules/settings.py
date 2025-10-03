@@ -267,7 +267,13 @@ def register_settings_handlers(bot):
     async def handle_quality(client, callback_query):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]])
-        editable = await callback_query.message.edit("__**Enter resolution or Video Quality (`144`, `240`, `360`, `480`, `720`, `1080`) or Send /d**__", reply_markup=keyboard)
+        editable = await callback_query.message.edit(
+            f"━━━━━━━━━━━━━ ⚡━━━━━━━━━━━━━\n"
+            f"🎥 <b>Enter Video Quality</b>\n"
+            f"━━━━━━━━━━━━━ ⚡━━━━━━━━━━━━━\n"
+            f"🔹 `144` | `240` | `360` | `480` | `720` | `1080`\n"
+            f"❌ Or Send /d for default\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
             if input_msg.text.lower() == "144":
@@ -314,7 +320,14 @@ def register_settings_handlers(bot):
     async def video_watermark(client, callback_query):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]])
-        editable = await callback_query.message.edit(f"**If you want to enable topic in caption: send /yes or send /d**\n\n<blockquote><b>Topic fetch from (bracket) in title</b></blockquote>", reply_markup=keyboard)
+        editable = await callback_query.message.edit(
+            f"━━━━━━━━━━━━━━━ ✦ ━━━━━━━━━━━━━━━\n"
+            f"✨ <b>Topic in Caption Settings</b> ✨\n"
+            f"━━━━━━━━━━━━━━━ ✦ ━━━━━━━━━━━━━━━\n"
+            f"✅ <u>Enable Topic</u> → /yes\n"
+            f"❌ <u>Disable Topic</u> → /d\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📌 <i>Topic will be auto-fetched from (bracket) in title</i>\n", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
             if input_msg.text.lower() == "/yes":               
@@ -332,7 +345,12 @@ def register_settings_handlers(bot):
     async def credit(client, callback_query):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]])
-        editable = await callback_query.message.edit(f"If you want to reset settings send /yes or Send /no", reply_markup=keyboard)
+        editable = await callback_query.message.edit(
+            f"⚡ <b>Reset Settings?</b> ⚡\n\n"
+            f"<blockquote>If you want to reset settings:</blockquote>\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"✔️ <b>Send</b> /yes\n"
+            f"❌ <b>Send</b> /no", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
             if input_msg.text.lower() == "/yes":

@@ -11,6 +11,7 @@ def register_settings_handlers(bot):
     
     @bot.on_callback_query(filters.regex("setttings"))
     async def settings_button(client, callback_query):
+        first_name = callback_query.from_user.first_name
         caption = (
             f"✪━━━━━━━━━★━━━━━━━━━✪\n"
             f"👑 <b>Welcome [{first_name}](tg://user?id={user_id})</b> 👑\n"
@@ -88,8 +89,8 @@ def register_settings_handlers(bot):
         caption = (
             f"✪━━━━━━━━━★━━━━━━━━━✪\n"
             f"👑 <b>Welcome [{first_name}](tg://user?id={user_id})</b> 👑\n"
-            f"✪━━━━━━━━━★━━━━━━━━━✪\n\n"
-            f"🔐 <b>Choose Button below to set Token</b> 💎\n"
+            f"✪━━━━━━━━━★━━━━━━━━━✪\n"
+            f"🔐 <b>Choose Button below to set Token</b>\n"
             f"✪━━━━━━━━━━━━━━━━━━━━✪"
         )
         keyboard = InlineKeyboardMarkup([
@@ -108,6 +109,7 @@ def register_settings_handlers(bot):
     @bot.on_callback_query(filters.regex("caption_style_command"))
     async def handle_caption(client, callback_query):
         user_id = callback_query.from_user.id
+        first_name = callback_query.from_user.first_name
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]])
         editable = await callback_query.message.edit(
             "**Caption Style 1**\n"
@@ -235,11 +237,11 @@ def register_settings_handlers(bot):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="set_token_command")]])
         editable = await callback_query.message.edit(
-            f"✪━━━━━━━━━★━━━━━━━━━✪\n"
+            f"✪━━━━━━★━━━━━━✪\n"
             f"👑 <b>Classplus Token</b> 👑\n"
-            f"✪━━━━━━━━━★━━━━━━━━━✪\n"
+            f"✪━━━━━━★━━━━━━✪\n"
             f"🔐 <b>Send Your CP Token</b>\n"
-            f"✪━━━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
+            f"✪━━━━━━━━━━━━━━✪", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
             globals.cptoken = input_msg.text
@@ -254,11 +256,11 @@ def register_settings_handlers(bot):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="set_token_command")]])
         editable = await callback_query.message.edit(
-            f"✪━━━━━━━━━★━━━━━━━━━✪\n"
+            f"✪━━━━━━━━★━━━━━━━━✪\n"
             f"👑 <b>Physics Wallah Token</b> 👑\n"
-            f"✪━━━━━━━━━★━━━━━━━━━✪\n"
+            f"✪━━━━━━━━★━━━━━━━━✪\n"
             f"🔐 <b>Send Your PW Token</b>\n"
-            f"✪━━━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
+            f"✪━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
             globals.pwtoken = input_msg.text
@@ -273,12 +275,12 @@ def register_settings_handlers(bot):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="set_token_command")]])
         editable = await callback_query.message.edit(
-            f"✪━━━━━━━━━★━━━━━━━━━✪\n"
+            f"✪━━━━━━━━★━━━━━━━━✪\n"
             f"👑 <b>brightcove link Token</b> 👑\n"
-            f"✪━━━━━━━━━★━━━━━━━━━✪\n"
-            f"🔐 <b>Send brightcove link Token</b>\n"
-            f"❌ Send /d for Default\n"
-            f"✪━━━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
+            f"✪━━━━━━━━★━━━━━━━━✪\n"
+            f"🔐 <b>Send brightcove link Token\n"
+            f"❌ Send /d for Default</b>\n"
+            f"✪━━━━━━━━━━━━━━━━━━✪", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
             if input_msg.text.lower() == "/d":
@@ -386,12 +388,12 @@ def register_settings_handlers(bot):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]])
         editable = await callback_query.message.edit(
-            f"━━━━━━━━━━━━━━━ ✦ ━━━━━━━━━━━━━━━\n"
+            f"━━━━━━━━━━━━ ✦ ━━━━━━━━━━━━\n"
             f"✨ <b>Topic in Caption Settings</b> ✨\n"
-            f"━━━━━━━━━━━━━━━ ✦ ━━━━━━━━━━━━━━━\n"
+            f"━━━━━━━━━━━━ ✦ ━━━━━━━━━━━━\n"
             f"✅ <u><b>Enable Topic</b></u> → /yes\n"
             f"❌ <u><b>Disable Topic</b></u> → /d\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"📌 <i>Topic will be auto-fetched from (bracket) in title</i>\n", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)
         try:
@@ -411,9 +413,8 @@ def register_settings_handlers(bot):
         user_id = callback_query.from_user.id
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]])
         editable = await callback_query.message.edit(
-            f"⚡ <b>Reset Settings?</b> ⚡\n\n"
-            f"<blockquote><b>If you want to reset settings:</b></blockquote>\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"⚡ <b>Want to Reset Settings?</b> ⚡\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"✔️ <b>Send</b> - /yes\n"
             f"❌ <b>Send</b> - /no", reply_markup=keyboard)
         input_msg = await bot.listen(editable.chat.id)

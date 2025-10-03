@@ -12,6 +12,7 @@ def register_settings_handlers(bot):
     @bot.on_callback_query(filters.regex("setttings"))
     async def settings_button(client, callback_query):
         first_name = callback_query.from_user.first_name
+        user_id = callback_query.from_user.id
         caption = (
             f"✪━━━━━━━━━★━━━━━━━━━✪\n"
             f"👑 <b>Welcome [{first_name}](tg://user?id={user_id})</b> 👑\n"
